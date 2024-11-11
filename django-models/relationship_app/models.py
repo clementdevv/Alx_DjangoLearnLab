@@ -1,6 +1,6 @@
 from django.db import models
 
-
+#Below are the 4 models
 class Author(models.Model):
     name = models.CharField(max_length=100)
 
