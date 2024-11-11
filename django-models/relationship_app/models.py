@@ -1,6 +1,7 @@
 from django.db import models
 
-#Below are the 4 models
+#Below are the Author, book, Library and librarian models
+
 class Author(models.Model):
     name = models.CharField(max_length=100)
 
