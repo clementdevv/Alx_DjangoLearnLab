@@ -1,0 +1,20 @@
+{% comment %} <form method="POST" action="/submit-url/">
+    {% csrf_token %}
+    <!-- Your form fields here -->
+    <button type="submit">Submit</button>
+</form> {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books</title>
+</head>
+<body>
+    <h1>Book List</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

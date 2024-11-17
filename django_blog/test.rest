@@ -1,0 +1,42 @@
+
+### Register a New User
+POST http://127.0.0.1:8000/register/
+Content-Type: application/x-www-form-urlencoded
+
+username=testuser
+email=testuser@example.com
+password1=Test@12345
+password2=Test@12345
+
+###
+
+### Login a User
+POST http://127.0.0.1:8000/login/
+Content-Type: application/x-www-form-urlencoded
+
+username=testuser
+password=Test@12345
+
+###
+
+### Access Profile (Authenticated)
+# Ensure to replace {{auth_token}} with the token obtained from the login response if using token authentication
+GET http://127.0.0.1:8000/profile/
+# Authorization: Bearer {{auth_token}}
+
+###
+
+### Update Profile
+# Replace {{auth_token}} with the token obtained from the login response if using token authentication
+POST http://127.0.0.1:8000/profile/
+Content-Type: application/x-www-form-urlencoded
+# Authorization: Bearer {{auth_token}}
+
+username=updateduser
+email=updateduser@example.com
+
+###
+
+### Logout
+# For Django's default logout system, no additional data is required
+GET http://127.0.0.1:8000/logout/
