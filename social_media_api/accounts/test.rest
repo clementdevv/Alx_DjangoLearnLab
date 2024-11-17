@@ -1,0 +1,31 @@
+# Test User Registration
+POST http://127.0.0.1:8000/api/accounts/register/
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "email": "johndoe@example.com",
+  "password": "password123",
+  "bio": "Loves Django!",
+  "profile_picture": null
+}
+
+###
+
+# Test User Login
+POST http://127.0.0.1:8000/api/accounts/login/
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "password123"
+}
+
+###
+
+# Test Token Authentication (Copy token from Login response and paste it below)
+GET http://127.0.0.1:8000/token_test/
+Content-Type: application/json
+Authorization: Token 12bcbaa18f61fe9bb4da11e07a14e8a1ff95e1cd
+
+{}
